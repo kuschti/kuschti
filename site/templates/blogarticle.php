@@ -14,5 +14,8 @@
     </footer>
   </article>
 </section>
+<section class="comments">
+  <?php snippet('disqus', array('disqus_shortname' => 'kuschti', 'disqus_developer' => true)) ?>
+</section>
 
 <?php snippet('footer') ?>
