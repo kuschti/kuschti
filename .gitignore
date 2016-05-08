@@ -1,6 +1,8 @@
 .DS_Store
 /site/accounts
 /site/cache
+/site/config/config.dev.kuschti.ch.php
+/site/config/config.kuschti.ch.php
 /assets/avatars
 /thumbs/*
 /content

@@ -44,7 +44,7 @@ fields:
       kreta: Kreta
       kurztrips: Kurztrips
       tokyo2008: Tokyo 2008
-      usatrip2011: USA Trip 2001
+      usatrip2011: USA Trip 2011
       videos: Videos
   tags:
     label: Tags
