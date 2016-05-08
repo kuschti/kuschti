@@ -9,7 +9,7 @@
 
     <hr>
 
-    <?php snippet('projects') ?>
+    <?php snippet('lastblogentries') ?>
 
   </main>
 
