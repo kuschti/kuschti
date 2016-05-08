@@ -1,0 +1,7 @@
+.DS_Store
+/site/accounts
+/site/cache
+/assets/avatars
+/thumbs/*
+/content
+/node_modules
