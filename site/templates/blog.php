@@ -1,36 +1,45 @@
 <?php snippet('header') ?>
+<main class="main">
 
-<section class="content blog">
+  <section class="content blog">
+    <header>
+      <!-- <h1><?php echo $page->title()->html() ?></h1> -->
+      <?php echo $page->text()->kirbytext() ?>
+    </header>
 
-  <h1><?php echo $page->title()->html() ?></h1>
-  <?php echo $page->text()->kirbytext() ?>
+    <?php foreach($articles as $article): ?>
 
-  <?php $articles = $page->children()->visible()->flip()->paginate(10) ?>
+      <article>
+        <h1><a href="<?php echo $article->url() ?>"><?php echo $article->title()->html() ?></a></h1>
+        <p><?php echo $article->text()->excerpt(300) ?></p>
+        <?php if($image = $article->images()->sortBy('sort', 'asc')->first()): ?>
+        <a href="<?php echo $article->url() ?>">
+          <img src="<?php echo $image->url() ?>" alt="<?php echo $article->title()->html() ?>" >
+        </a>
+        <?php endif ?>
+        <time datetime="<?php echo $article->date('c') ?>" pubdate="pubdate"><?php echo $article->date('d. M Y') ?></time> -
+        <a href="<?php echo $article->url() ?>">Weiterlesen…</a>
+      </article>
+      <hr />
 
-  <?php foreach($articles as $article): ?>
+    <?php endforeach ?>
 
-    <article>
-      <h1><?php echo $article->title()->html() ?></h1>
-      <p><?php echo $article->text()->kirbytext() ?></p>
-      <a href="<?php echo $article->url() ?>">Read more…</a>
-    </article>
+    <?php if($articles->pagination()->hasPages()): ?>
+      <nav class="pagination">
 
-  <?php endforeach ?>
+        <?php if($articles->pagination()->hasPrevPage()): ?>
+        <a class="next" href="<?php echo $articles->pagination()->prevPageURL() ?>">&lsaquo; neuere Artikel</a>
+        <?php endif ?>
 
-  <?php if($articles->pagination()->hasPages()): ?>
-    <nav class="pagination">
+        <?php if($articles->pagination()->hasNextPage()): ?>
+        <a class="prev" href="<?php echo $articles->pagination()->nextPageURL() ?>">ältere Artikel &rsaquo;</a>
+        <?php endif ?>
 
-      <?php if($articles->pagination()->hasNextPage()): ?>
-      <a class="next" href="<?php echo $articles->pagination()->nextPageURL() ?>">&lsaquo; older posts</a>
-      <?php endif ?>
 
-      <?php if($articles->pagination()->hasPrevPage()): ?>
-      <a class="prev" href="<?php echo $articles->pagination()->prevPageURL() ?>">newer posts &rsaquo;</a>
-      <?php endif ?>
 
-    </nav>
-  <?php endif ?>
+      </nav>
+    <?php endif ?>
 
-</section>
-
+  </section>
+</main>
 <?php snippet('footer') ?>

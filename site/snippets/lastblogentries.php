@@ -11,7 +11,7 @@
     </a>
     <?php endif ?>
     <p>
-      <a href="<?php echo $article->url() ?>">Weiterlesen...</a>
+      <a href="<?php echo $article->url() ?>">Weiterlesen…</a>
     </p>
   </article>
   <hr />
