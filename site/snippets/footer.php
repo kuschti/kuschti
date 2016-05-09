@@ -10,5 +10,7 @@
 
   </footer>
 
+  <?php snippet('analytics') ?>
+
 </body>
 </html>

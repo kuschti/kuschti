@@ -1,4 +1,4 @@
-<h2>Neuste Blogeinträge</h2>
+<h2>Neuste Artikel</h2>
 
 <?php foreach(page('blog')->children()->visible()->flip()->limit(3) as $article): ?>
 
@@ -10,7 +10,11 @@
       <img src="<?php echo $image->url() ?>" alt="<?php echo $article->title()->html() ?>" >
     </a>
     <?php endif ?>
-    <a href="<?php echo $article->url() ?>">Read more…</a>
+    <p>
+      <a href="<?php echo $article->url() ?>">Weiterlesen...</a>
+    </p>
   </article>
+  <hr />
 
 <?php endforeach ?>
+<a href="<?php echo url() ?>/blog">Weitere Artikel</a>

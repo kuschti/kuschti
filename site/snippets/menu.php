@@ -1,5 +1,4 @@
 <nav role="navigation">
-
   <ul class="menu cf">
     <?php foreach($pages->visible() as $p): ?>
     <li>
@@ -7,5 +6,4 @@
     </li>
     <?php endforeach ?>
   </ul>
-
 </nav>
