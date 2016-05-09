@@ -15,7 +15,7 @@
 
         <?php if($image = $article->images()->sortBy('sort', 'asc')->first()): ?>
         <a href="<?php echo $article->url() ?>">
-          <img src="<?php echo $image->url() ?>" srcset="<?php echo kirby_get_srcset($image) ?>" sizes="<?php echo kirby_get_sizes($image) ?>" alt="<?php echo $article->title()->html() ?>" >
+          <img src="<?php echo $image->resize(480)->url() ?>" srcset="<?php echo kirby_get_srcset($image) ?>" sizes="<?php echo kirby_get_sizes($image) ?>" alt="<?php echo $article->title()->html() ?>" >
         </a>
         <?php endif ?>
 

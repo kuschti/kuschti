@@ -3,7 +3,7 @@
 // set the defaults
 if(!isset($disqus_shortname))  die('Please pass the disqus shortname');
 if(!isset($disqus_title))      $disqus_title = $page->title();
-if(!isset($disqus_developer))  $disqus_developer = false;
+if(!isset($disqus_developer))  $disqus_developer = true;
 if(!isset($disqus_identifier)) $disqus_identifier = $page->uri();
 if(!isset($disqus_url))        $disqus_url = thisURL();
 
@@ -21,7 +21,7 @@ $disqus_developer = ($disqus_developer) ? 'true' : 'false';
 
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

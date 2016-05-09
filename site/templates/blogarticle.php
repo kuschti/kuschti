@@ -30,7 +30,7 @@
     </nav>
   </section>
   <section class="comments">
-    <?php snippet('disqus', array('disqus_shortname' => 'kuschti', 'disqus_developer' => true)) ?>
+    <?php snippet('disqus', array('disqus_shortname' => c::get('disqus_name'), 'disqus_developer' => true)) ?>
   </section>
 </main>
 <?php snippet('footer') ?>
