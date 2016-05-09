@@ -6,9 +6,9 @@
     <h1><a href="<?php echo $article->url() ?>"><?php echo $article->title()->html() ?></a></h1>
     <p><?php echo $article->text()->excerpt(300) ?></p>
     <?php if($image = $article->images()->sortBy('sort', 'asc')->first()): ?>
-    <a href="<?php echo $article->url() ?>">
-      <img src="<?php echo $image->url() ?>" alt="<?php echo $article->title()->html() ?>" >
-    </a>
+      <a href="<?php echo $article->url() ?>">
+        <img src="<?php echo $image->url() ?>" srcset="<?php echo kirby_get_srcset($image) ?>" sizes="<?php echo kirby_get_sizes($image) ?>" alt="<?php echo $article->title()->html() ?>" >
+      </a>
     <?php endif ?>
     <p>
       <a href="<?php echo $article->url() ?>">Weiterlesen…</a>

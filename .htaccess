@@ -15,6 +15,13 @@
 #RewriteRule ^([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/?$ https://kuschti.ch/blog/$4/ [R=301,L]
 #</IfModule>
 
+# BEGIN FEEDPRESS
+<IfModule mod_rewrite.c>
+RewriteCond %{HTTP_USER_AGENT} !FeedValidator [NC]
+RewriteCond %{HTTP_USER_AGENT} !FeedPress [NC]
+RewriteRule ^feed/?$ http://feedpress.me/kuschti [R=302,NC,L]
+</IfModule>
+# END FEEDPRESS
 
 # Kirby .htaccess
 
