@@ -70,6 +70,32 @@ RewriteRule ^(.*) index.php [L]
 # php_flag short_open_tag on
 
 # ----------------------------------------------------------------------
+# Expires
+# ----------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive on
+
+  # Add correct content-type for fonts
+  AddType application/vnd.ms-fontobject .eot
+  AddType application/x-font-ttf .ttf
+  AddType application/x-font-opentype .otf
+  AddType application/x-font-woff .woff
+  AddType image/svg+xml .svg
+  
+  # Webfonts
+  ExpiresByType font/truetype             "access plus 1 month"
+  ExpiresByType font/opentype             "access plus 1 month"
+  ExpiresByType application/x-font-woff   "access plus 1 month"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+
+  <IfModule mod_headers.c>
+    Header append Cache-Control "public"
+  </IfModule>
+
+</IfModule>
+
+
+# ----------------------------------------------------------------------
 # Gzip compression
 # ----------------------------------------------------------------------
 

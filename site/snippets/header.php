@@ -16,11 +16,10 @@
   <meta name="keywords" content="<?php echo $site->keywords()->html() ?>">
   <meta name="publisher" content="<?php echo html($site->author()) ?>" />
   <meta name="copyright" content="<?php echo html($site->author()) ?>" />
-  <meta name="robots" content="index,follow" />
 
   <link rel="canonical" href="<?php echo html($page->url()) ?>" />
   <link rel="alternate" type="application/rss+xml" href="https://kuschti.ch/feed" title="Blog Feed">
-  
+
   <?php echo css('assets/css/main.css') ?>
 </head>
 <body>
