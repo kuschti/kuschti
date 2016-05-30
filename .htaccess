@@ -9,11 +9,11 @@
 #</IfModule>
 
 # Redirects from old Wordpress URLs to new
-#<IfModule mod_rewrite.c>
-#RewriteEngine On
-#RewriteBase /
-#RewriteRule ^([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/?$ https://kuschti.ch/blog/$4/ [R=301,L]
-#</IfModule>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/?$ https://kuschti.ch/blog/$4/ [R=301,L]
+</IfModule>
 
 # BEGIN FEEDPRESS
 <IfModule mod_rewrite.c>
@@ -81,7 +81,7 @@ RewriteRule ^(.*) index.php [L]
   AddType application/x-font-opentype .otf
   AddType application/x-font-woff .woff
   AddType image/svg+xml .svg
-  
+
   # Webfonts
   ExpiresByType font/truetype             "access plus 1 month"
   ExpiresByType font/opentype             "access plus 1 month"

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+  <meta name="google-site-verification" content="trbkTmz0u-yA8op-qHcTU7PdVcVoVjJesMZ6NFiaGaE" />
+
   <title><?php echo $site->title()->html() ?> | <?php echo $page->title()->html() ?></title>
 
   <!-- Prefetch DNS for external assets (Twitter widgets etc). -->
