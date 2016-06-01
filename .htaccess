@@ -8,11 +8,14 @@
 #RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [QSA,L,R=301]
 #</IfModule>
 
-# Redirects from old Wordpress URLs to new
+# Redirects from old article Wordpress URLs to new
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
 RewriteRule ^([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/?$ https://kuschti.ch/blog/$4/ [R=301,L]
+RewriteRule ^tag/([^/]+)/?$ https://kuschti.ch/blog/tag:$1/ [R=301,L]
+RewriteRule ^themen/([^/]+)/?$ https://kuschti.ch/blog/category:$1/ [R=301,L]
+RewriteRule ^page/([^/]+)/?$ https://kuschti.ch/blog/page:$1/ [R=301,L]
 </IfModule>
 
 # BEGIN FEEDPRESS
