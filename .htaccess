@@ -11,7 +11,7 @@
 # Redirects from old article Wordpress URLs to new
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /
+#RewriteBase /
 RewriteRule ^([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/?$ https://kuschti.ch/blog/$4/ [R=301,L]
 RewriteRule ^tag/([^/]+)/?$ https://kuschti.ch/blog/tag:$1/ [R=301,L]
 RewriteRule ^themen/([^/]+)/?$ https://kuschti.ch/blog/category:$1/ [R=301,L]
@@ -27,22 +27,8 @@ RewriteRule ^feed/?$ http://feedpress.me/kuschti [R=302,NC,L]
 # END FEEDPRESS
 
 # Kirby .htaccess
-
-# rewrite rules
 <IfModule mod_rewrite.c>
-
-# enable awesome urls. i.e.:
-# http://yourdomain.com/about-us/team
 RewriteEngine on
-
-# make sure to set the RewriteBase correctly
-# if you are running the site in a subfolder.
-# Otherwise links or the entire site will break.
-#
-# If your homepage is http://yourdomain.com/mysite
-# Set the RewriteBase to:
-#
-# RewriteBase /mysite
 
 # block text files in the content folder from being accessed directly
 RewriteRule ^content/(.*)\.(txt|md|mdown)$ index.php [L]
@@ -64,13 +50,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*) index.php [L]
 
 </IfModule>
-
-# Additional recommended values
-# Remove comments for those you want to use.
-#
-# AddDefaultCharset UTF-8
-#
-# php_flag short_open_tag on
 
 # ----------------------------------------------------------------------
 # Expires
