@@ -12,10 +12,13 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 #RewriteBase /
-RewriteRule ^([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/?$ https://kuschti.ch/blog/$4/ [R=301,L]
-RewriteRule ^tag/([^/]+)/?$ https://kuschti.ch/blog/tag:$1/ [R=301,L]
-RewriteRule ^themen/([^/]+)/?$ https://kuschti.ch/blog/category:$1/ [R=301,L]
-RewriteRule ^page/([^/]+)/?$ https://kuschti.ch/blog/page:$1/ [R=301,L]
+RewriteBase /
+RewriteCond %{HTTP_HOST} !^www\.kuschti\.ch$
+RewriteRule ^(.*)$ https://www.kuschti.ch/$1 [L,R=301]
+RewriteRule ^([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/?$ https://www.kuschti.ch/blog/$4/ [R=301,L]
+RewriteRule ^tag/([^/]+)/?$ https://www.kuschti.ch/blog/tag:$1/ [R=301,L]
+RewriteRule ^themen/([^/]+)/?$ https://www.kuschti.ch/blog/category:$1/ [R=301,L]
+RewriteRule ^page/([^/]+)/?$ https://www.kuschti.ch/blog/page:$1/ [R=301,L]
 </IfModule>
 
 # BEGIN FEEDPRESS
@@ -117,3 +120,4 @@ RewriteRule ^(.*) index.php [L]
 </IfModule>
 
 Header set Connection keep-alive
+AddHandler application/x-httpd-php70 .php
