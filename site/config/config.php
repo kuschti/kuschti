@@ -29,6 +29,8 @@ c::set('routes', array(
 ));
 
 c::set('thumbs.driver', 'im');
+c::set('thumbs.quality', '80');
+c::set('thumbs.interlace', true);
 
 // config for responsive images
 c::set('responsiveimages.sources', array(
